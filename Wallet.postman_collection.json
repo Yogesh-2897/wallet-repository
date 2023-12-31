@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "4823b9f1-78e7-40c7-8330-fe9014e4af76",
+		"name": "Wallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31705228"
+	},
+	"item": [
+		{
+			"name": "Register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"firstName\":\"Yogesh\",\r\n    \"lastName\":\"Chaudhari\",\r\n    \"email\":\"yogeshchaudhari245@gmail.com\",\r\n    \"userName\":\"yogesh2\",\r\n    \"phoneNumber\":\"7588702897\",\r\n    \"password\":\"Pass123$\",\r\n    \"balance\" : \"2000.00\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/wallet-application/registration/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wallet-application",
+						"registration",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/wallet-application/wallet/balance?userName=yogesh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wallet-application",
+						"wallet",
+						"balance"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "yogesh"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":1,\r\n    \"transactionName\":\"Car wash\",\r\n    \"transactionType\":\"Withdraw\",\r\n    \"transactionAmount\":\"100.0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/wallet-application/wallet/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wallet-application",
+						"wallet",
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction-list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/wallet-application/wallet/transaction-list?userName=yogesh2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wallet-application",
+						"wallet",
+						"transaction-list"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "yogesh2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
